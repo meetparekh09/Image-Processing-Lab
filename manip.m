@@ -1,0 +1,22 @@
+function a = manip()
+  x = 0:1:720;
+  x = x.*(pi/180);
+  y = sin(x);
+  ex = exp(x);
+  figure('name', 'Original Signals');
+  plot(x, y, 'color', 'red');
+  hold-on;
+  plot(x, ex, 'color', 'green');
+  hold-on;
+  l = legend('sin', 'exp');
+  legend(l, 'location', 'northeastoutside');
+  axis([0 15 -5 5]);
+  figure('name', 'Manipulated Signals');
+  plot(x, y+ex, 'color', 'blue');
+  hold-on;
+  plot(x, y.*ex, 'color', 'black');
+  hold-on;
+  axis([0 15 -200 200]);
+  l = legend('sin+exp', 'sin*exp');
+  legend(l, 'location', 'northeastoutside');
+  a = 1;
